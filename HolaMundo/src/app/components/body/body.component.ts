@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   
 })
 export class BodyComponent {
-  
+  mostrar:boolean=false;
+  frase:any = {
+    mensaje: "gran poder",
+    autor: "ben"
+  };
+
+  personajes:string[] =["spiderman", "venom", "Dr. Octopus"];
+
 }
