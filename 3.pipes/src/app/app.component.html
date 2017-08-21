@@ -1,0 +1,94 @@
+<div class="container">
+    <br>
+    <h1>Pipes</h1>
+    <hr>
+    <table class="table">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Variable</th>
+                <th>Pipe</th>
+                <th>Producto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{nombre}}</td>
+                <td>UpperCase</td>
+                <td>{{nombre | uppercase}}</td>
+            </tr>
+            <tr>
+                <td>{{nombre}}</td>
+                <td>LowerCase</td>
+                <td>{{nombre | lowercase }}</td>
+            </tr>
+            <tr>
+                <td>{{nombre}}</td>
+                <td>slice:3</td>
+                <td>{{nombre | slice:3 }}</td>
+            </tr>
+            <tr>
+                <td>{{nombre}}</td>
+                <td>slice:0:3</td>
+                <td>{{nombre | slice:0:5 }}</td>
+            </tr>
+            <tr>
+                <td>{{arreglo}}</td>
+                <td>slice:1:5</td>
+                <td>{{arreglo | slice:1:5 }}</td>
+            </tr>
+            <tr>
+                <td>{{pi}}</td>
+                <td>number:3.0-0</td>
+                <td>{{pi | number:'3.0-0' }}</td>
+            </tr>
+            <tr>
+                <td>{{pi}}</td>
+                <td>number:1.0-2</td>
+                <td>{{pi | number:'1.0-2' }}</td>
+            </tr>
+            <tr>
+                <td>{{a}}</td>
+                <td>percent</td>
+                <td>{{a | percent }}</td>
+            </tr>
+            <tr>
+                <td>{{b}}</td>
+                <td>percent:'4.3-5'</td>
+                <td>{{b | percent:'4.3-5' }}</td>
+            </tr>
+            <tr>
+                <td>{{b}}</td>
+                <td>currency:'USD':false</td>
+                <td>{{a | currency:'USD':false}}</td>
+            </tr>
+            <tr>
+                <td>{{b}}</td>
+                <td>currency:'USD':true:'4.2-2'</td>
+                <td>{{b | currency:'USD':true:'4.2-2'}}</td>
+            </tr>
+            <tr>
+                <td>{{valorPromesa}}</td>
+                <td>async</td>
+                <td>{{valorPromesa | async }}</td>
+            </tr>
+            <tr>
+                <td>{{fecha}}</td>
+                <td>date</td>
+                <td>{{fecha | date:'longDate' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Slice: arreglo desde posición 5 a la 7</h3>
+    <ul>
+        <li *ngFor="let item of arreglo | slice:5:7">{{item}}</li>
+    </ul>
+
+    <h3>Json</h3>
+    <pre>
+        {{heroe | json}}
+        </pre>
+    <br>
+    <br>
+    <br>
+</div>
