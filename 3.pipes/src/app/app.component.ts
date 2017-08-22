@@ -15,6 +15,8 @@ export class AppComponent {
   a: number = 0.259;
   b: number = 1.3495;
 
+  video ="u2FY0lKNlzs";
+
   heroe = {
     nombre: "logan",
     clave:"wolverine",
