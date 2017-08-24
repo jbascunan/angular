@@ -13,7 +13,7 @@ export class SpotifyService {
 
   getArtistas(termino: string) {
     let headers = new Headers();
-    headers.append('authorization', 'Bearer BQDC_YaDpcwOy81PITReyH8lZ1sNY8vY2sahamM41OZxRTfBucpHkXxCKuDmhexsCMl8xri5EOL6IgllZWoaow');
+    headers.append('authorization', 'Bearer BQCFKcMughYtGZ0QDkqAtwGOdIQuS4Qa9hu6J1mZ-KAIRkkEjtQ8Y867BgL5Tmf45X85DygN6_0ahi6-r_qIcw');
 
     let query = `?q=${termino}&type=artist`;
     let url = this.urlBusqueda + query;
@@ -24,7 +24,7 @@ export class SpotifyService {
       this.artistas = res.json().artists.items;
       console.log(this.artistas);
 
-      return res.json().artists.items;
+      //return res.json().artists.items;
     })
 
   }

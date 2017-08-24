@@ -1,9 +1,18 @@
 <div class="container top-30">
 
-  <div class="row">
-    <div class="col-md-2">
-      <label for="termino">Buscador de artistas</label>
-      <input [(ngModel)]="termino" type="text" name="termino" placeholder="buscar por artista">
+    <div class="row">
+        <div class="col-md-2">
+            <label for="termino">Buscador de artistas</label>
+            <input [(ngModel)]="termino" (keyup)="buscarArtista()" type="text" name="termino" placeholder="buscar por artista" class="form-control">
+            <hr>
+        </div>
+        <div class="col-md-9">
+            <ul>
+                <li *ngFor="let artista of _spotifyServices.artistas">
+                    {{artista.name}}
+                </li>
+            </ul>
+
+        </div>
     </div>
-  </div>
 </div>

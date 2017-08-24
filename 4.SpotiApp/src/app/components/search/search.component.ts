@@ -17,7 +17,11 @@ export class SearchComponent implements OnInit {
     //   console.log('esto es del search.component');
     //   console.log(data);
     // });
-    this._spotifyServices.getArtistas("metallica").subscribe();
+  }
+  
+  buscarArtista(){
+    this._spotifyServices.getArtistas(this.termino).subscribe();
+    //console.log(this.termino);
   }
 
 }
