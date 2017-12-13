@@ -1,0 +1,25 @@
+<p>
+    pagina usuario
+</p>
+
+<div class="container top-30">
+
+    <div class="row">
+        <div class="col-md-2">
+            <label for="termino">Buscador de artistas</label>
+            <input (keyup)="cargarUsuarios()" type="text" name="termino" placeholder="buscar por artista" class="form-control">
+            <hr>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-3 text-center" *ngFor="let usuario of _usuarioServices.Usuario">
+                    <p>{{usuario.address.street}}</p>
+                    <p>{{usuario.name}}</p>
+                    <p>{{usuario.username}}</p>
+                    <p>{{usuario.email}}</p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

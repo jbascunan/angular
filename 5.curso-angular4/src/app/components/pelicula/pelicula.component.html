@@ -1,0 +1,18 @@
+<p>
+    peliculas desde api node!
+</p>
+<div class="container top-30">
+
+    <div class="row">
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-3 text-center" *ngFor="let pelicula of _peliculaServices.Pelicula">
+                    <p>{{pelicula.movie_id}}</p>
+                    <p>{{pelicula.title}}</p>
+                    <p>{{pelicula.release}}</p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

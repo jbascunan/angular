@@ -10,6 +10,8 @@ export class SpotifyService {
   urlBusqueda: string = "https://api.spotify.com/v1/search";
   urlArtista: string = "https://api.spotify.com/v1/artists";
 
+  
+
   constructor(private http: Http) { }
 
   getArtistas(termino: string) {
@@ -66,7 +68,27 @@ export class SpotifyService {
   getToken(){
     let _url: string ='https://reqres.in/api/users';
     return this.http.post(_url,{name:'Junaid',job:'Programmer',city:'Mumbai'})
-    .map((res:Response)=>res.json);
+    .map((res:Response)=>res.json());
+  }
+
+  getTokenSpotify() {
+    let _url: string = 'https://accounts.spotify.com/api/token';
+    let body = new URLSearchParams();
+   
+    //body.append('client_id', 'eeded0a284af4401a105bd4a45e873a9');
+    //body.append('client_secret', 'ef08ebf4c00e421f94822607c0e4c59d');
+    body.append('grant_type', 'client_credentials');
+
+   
+    let headers2: Headers = new Headers();
+    headers2.append('Content-Type', 'application/x-www-form-urlencoded');
+    headers2.append("Authorization", "Basic " + btoa('eeded0a284af4401a105bd4a45e873a9' + ":" + 'ef08ebf4c00e421f94822607c0e4c59d'));
+    //headers2.append("Authorization", "Basic ZWVkZWQwYTI4NGFmNDQwMWExMDViZDRhNDVlODczYTk6ZWYwOGViZjRjMDBlNDIxZjk0ODIyNjA3YzBlNGM1OWQ=");
+    //let options = new RequestOptions({ headers: headers });
+
+
+    return this.http.post(_url, body)
+      .map((res: Response) => res.json());
   }
 
 }
